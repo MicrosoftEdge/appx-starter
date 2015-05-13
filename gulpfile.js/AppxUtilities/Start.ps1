@@ -10,5 +10,5 @@ $list = $apps | ForEach-Object {Get-ItemProperty $_.pspath}
 $list | ForEach-Object {if ($_.Moniker -eq $pfn) { $sid=$_.PSChildName}}
 Write-Host $sid
 Pop-Location
-CheckNetIsolation loopbackexempt -a -p=$sid
+iex "CheckNetIsolation loopbackexempt -a -p=$($sid)"
 $result | .\gulpfile.js\AppxUtilities\Launch-AppxPackage.ps1
