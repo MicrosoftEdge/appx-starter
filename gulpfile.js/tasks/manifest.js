@@ -1,8 +1,6 @@
 var gulp = require('gulp');
 var fs = require('fs');
 
-var parser = new xml2js.Parser({parseComments: true});
-
 function manifest() {
   var buffer = fs.readFileSync('./src/AppxManifest.xml', 'utf-8');
   var manifest = buffer.split('\n');
