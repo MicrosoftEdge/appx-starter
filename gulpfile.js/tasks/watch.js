@@ -14,6 +14,7 @@ gulp.task('watch', ['watchify','browserSync'], function(callback) {
   watch(config.lint.src, function() { gulp.start('lint'); });
   watch(config.images.src, function() { gulp.start('images'); });
   watch(config.markup.watch, function() { gulp.start('markup'); });
+  watch(config.misc.src, function() { gulp.start('misc'); });
   // Watchify will watch and recompile our JS, so no need to gulp.watch it
 });
 
@@ -23,6 +24,7 @@ gulp.task('watchappx', ['watchify','browserSync'], function(callback) {
   watch(config.lint.src, function() { gulp.start('lint'); });
   watch(config.images.src, function() { gulp.start('images'); });
   watch(config.markup.watch, function() { gulp.start('markup'); });
+  watch(config.misc.src, function() { gulp.start('misc'); });
   gulp.start('appx');
   // Watchify will watch and recompile our JS, so no need to gulp.watch it
 });

@@ -1,5 +1,5 @@
 var gulp = require('gulp');
 
-gulp.task('default', ['sass', 'lint', 'images', 'markup', 'watch']);
+gulp.task('default', ['clean','sass', 'lint', 'images', 'markup', 'misc', 'watch']);
 
-gulp.task('appx:dev', ['sass', 'lint', 'images', 'markup', 'watchappx']);
+gulp.task('appx:dev', ['clean', 'sass', 'lint', 'images', 'markup', 'misc', 'watchappx']);

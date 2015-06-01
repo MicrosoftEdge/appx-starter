@@ -1,8 +1,9 @@
 var gulp = require('gulp');
 var fs = require('fs');
+var config = require('../config').appx;
 
 function manifest() {
-  var buffer = fs.readFileSync('./src/AppxManifest.xml', 'utf-8');
+  var buffer = fs.readFileSync(config.src, 'utf-8');
   var manifest = buffer.split('\n');
   var updated = [];
   var versionBump = '';
@@ -14,7 +15,7 @@ function manifest() {
     }
   });
   updated.push(versionBump);
-  fs.writeFileSync('./src/AppxManifest.xml', updated.join('\n'));
+  fs.writeFileSync(config.src, updated.join('\n'));
 }
 
 gulp.task('manifest', manifest);

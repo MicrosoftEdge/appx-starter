@@ -33,6 +33,13 @@ module.exports = {
       defaults: {cache: false}
     }
   },
+  misc: {
+    src: src + '/misc/**',
+    dest: dest
+  },
+  appx: {
+    src: src + '/appxmanifest.xml'
+  },
   browserify: {
     // A separate bundle will be generated for each
     // bundle config in the list below
