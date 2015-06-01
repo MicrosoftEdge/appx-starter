@@ -51,5 +51,6 @@
   <Capabilities>
     <Capability Name="internetClient" />
   </Capabilities>
-
 </Package>
+
+<!--Build v4-->
