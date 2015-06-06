@@ -8,7 +8,7 @@ var config   = require('../config');
 var watchify = require('./browserify')
 var watch = require('gulp-watch');
 
-gulp.task('watch', ['watchify','browserSync'], function(callback) {
+function standardTasks() {
   //gulp.start() will be deprecated in 4.0. Make sure to revisit
   watch(config.sass.src, function() { gulp.start('sass'); });
   watch(config.lint.src, function() { gulp.start('lint'); });
@@ -16,15 +16,18 @@ gulp.task('watch', ['watchify','browserSync'], function(callback) {
   watch(config.markup.watch, function() { gulp.start('markup'); });
   watch(config.misc.src, function() { gulp.start('misc'); });
   // Watchify will watch and recompile our JS, so no need to gulp.watch it
+}
+
+gulp.task('watch', ['watchify','browserSync'], function(callback) {
+  standardTasks();
 });
 
 gulp.task('watchappx', ['watchify','browserSync'], function(callback) {
-  //gulp.start() will be deprecated in 4.0. Make sure to revisit
-  watch(config.sass.src, function() { gulp.start('sass'); });
-  watch(config.lint.src, function() { gulp.start('lint'); });
-  watch(config.images.src, function() { gulp.start('images'); });
-  watch(config.markup.watch, function() { gulp.start('markup'); });
-  watch(config.misc.src, function() { gulp.start('misc'); });
+  standardTasks();
   gulp.start('appx');
-  // Watchify will watch and recompile our JS, so no need to gulp.watch it
+});
+
+gulp.task('watchext', ['watchify','browserSync'], function(callback) {
+  gulp.start('ngrok');
+  standardTasks();
 });

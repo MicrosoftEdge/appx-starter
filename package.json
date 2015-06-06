@@ -33,7 +33,7 @@
     }
   },
   "devDependencies": {
-    "browser-sync": "^2.7.1",
+    "browser-sync": "^2.7.6",
     "browserify": "^8.0.2",
     "browserify-shim": "^3.8.2",
     "coffeeify": "~0.7.0",
@@ -56,10 +56,12 @@
     "gulp-watch": "^4.2.4",
     "jshint-stylish": "^1.0.0",
     "lodash": "^2.4.1",
+    "ngrok": "^0.1.99",
     "pretty-hrtime": "~0.2.1",
     "require-dir": "^0.1.0",
     "vinyl-source-stream": "~0.1.1",
-    "watchify": "^2.2.1"
+    "watchify": "^2.2.1",
+    "xml2js": "^0.4.9"
   },
   "dependencies": {
     "jquery": "~2.1.0",

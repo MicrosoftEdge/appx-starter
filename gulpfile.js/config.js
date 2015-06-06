@@ -1,11 +1,13 @@
 var dest = './build';
 var src = './src';
+var port = 3000;
 
 module.exports = {
   browserSync: {
     server: {
       // Serve up our build folder
-      baseDir: dest
+      baseDir: dest,
+      port: port
     }
   },
   sass: {
@@ -36,6 +38,9 @@ module.exports = {
   misc: {
     src: src + '/misc/**',
     dest: dest
+  },
+  ngrok: {
+    port: port
   },
   appx: {
     src: src + '/appxmanifest.xml'
