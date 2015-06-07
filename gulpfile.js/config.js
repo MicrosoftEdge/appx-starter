@@ -43,7 +43,8 @@ module.exports = {
     port: port
   },
   appx: {
-    src: src + '/appxmanifest.xml'
+    src: src + '/appxmanifest.xml',
+    dest: dest + '/appxmanifest.xml'
   },
   browserify: {
     // A separate bundle will be generated for each
