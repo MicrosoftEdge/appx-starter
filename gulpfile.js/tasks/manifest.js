@@ -10,7 +10,7 @@ var argv = require('yargs').argv;
 function manifest() {
   var url = 'http://localhost:3000';
   if (argv.ngrok) {
-    url = 'http://' + argv.ngrok + '.ngrok.com';
+    url = 'https://' + argv.ngrok + '.ngrok.com';
   } else if (argv.url) {
     url = argv.url;
   }
@@ -25,7 +25,6 @@ function manifest() {
     }
   });
   parser.parseString(buffer, function(err, result) {
-    //console.log(util.inspect(result, false, null));
     var urlSections = result.Package.Applications[0].Application[0];
     var startPage = urlSections['$'];
     var acur = urlSections['uap:ApplicationContentUriRules'][0]['uap:Rule'][0]['$'];
