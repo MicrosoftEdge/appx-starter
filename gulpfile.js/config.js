@@ -21,7 +21,7 @@ module.exports = {
     }
   },
   lint: {
-    src: src + '/javascript/*.js'
+    src: [src + '/bundles/**/*.js', src + '/misc/**/*.js']
   },
   images: {
     src: src + '/images/**',
@@ -50,7 +50,7 @@ module.exports = {
     // A separate bundle will be generated for each
     // bundle config in the list below
     bundleConfigs: [{
-      entries: src + '/javascript/main.js',
+      entries: src + '/bundles/main.js',
       dest: dest,
       outputName: 'main.js',
       // list of modules to make require-able externally
