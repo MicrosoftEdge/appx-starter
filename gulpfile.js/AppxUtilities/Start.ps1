@@ -3,8 +3,7 @@ $guid = $args[1]
 Write-Host $guid
 cd $cwd
 $installed = .\gulpfile.js\AppxUtilities\Get-AppxPackageExt.ps1 $guid
-if ($installed -ne '') { 
-Remove-AppxPackage $installed.PackageFullName }
+if ($installed) { Remove-AppxPackage $installed.PackageFullName }
 $result = .\gulpfile.js\AppxUtilities\Add-AppxPackageExt.ps1 .\src\AppxManifest.xml
 $pfn = $result.Package.PackageFamilyName
 Push-Location
