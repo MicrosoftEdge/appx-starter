@@ -43,7 +43,7 @@
 
       </uap:VisualElements>
       <uap:ApplicationContentUriRules>
-        <uap:Rule Match="http://localhost:3000" Type="include"></uap:Rule>
+        <uap:Rule Match="http://localhost:3000" WindowsRuntimeAccess="all" Type="include"></uap:Rule>
       </uap:ApplicationContentUriRules>
     </Application>
   </Applications>
@@ -52,5 +52,3 @@
     <Capability Name="internetClient" />
   </Capabilities>
 </Package>
-
-<!--Build v0-->
