@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
@@ -8,22 +8,22 @@
   <Identity
     Name="122f1d07-66a9-427c-9fb4-80fa75b5d81a"
     Version="1.0.0.0"
-    Publisher="CN=Contoso" />
+    Publisher="CN=Demo" />
 
   <mp:PhoneIdentity PhoneProductId="122f1d07-66a9-427c-9fb4-80fa75b5d81a" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>ContosoApp</DisplayName>
-    <PublisherDisplayName>Contoso</PublisherDisplayName>
+    <DisplayName>DemoApp</DisplayName>
+    <PublisherDisplayName>Demo User</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
 
   <Dependencies>
-    <TargetPlatform Name="Windows.Universal" MinVersion="10.0.10030.0" MaxVersionTested="10.0.10030.0" />
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10069.0" MaxVersionTested="10.0.10069.0" />
   </Dependencies>
 
   <Resources>
-    <Resource Language="en-us" />
+    <Resource Language="x-generate" />
   </Resources>
 
   <Applications>
@@ -32,22 +32,21 @@
       StartPage="http://localhost:3000">
 
       <uap:VisualElements
-        DisplayName="ContosoApp"
-        Description="ContosoApp"
-        ForegroundText="light"
-        BackgroundColor="#464646"
+        DisplayName="DemoApp"
+        Description="DemoApp"
+        BackgroundColor="#FFFFFF"
         Square150x150Logo="images\Logo.png"
         Square44x44Logo="images\SmallLogo.png">
-
+        
         <uap:SplashScreen Image="images\splashscreen.png" />
-
       </uap:VisualElements>
+      <!-- Describe where the app ends and the internet begins -->
       <uap:ApplicationContentUriRules>
-        <uap:Rule Match="http://localhost:3000" WindowsRuntimeAccess="all" Type="include"></uap:Rule>
+        <uap:Rule Type="include" Match="http://localhost:3000" WindowsRuntimeAccess="all"/>
       </uap:ApplicationContentUriRules>
     </Application>
   </Applications>
-
+  <!-- List different application capabilities -->
   <Capabilities>
     <Capability Name="internetClient" />
   </Capabilities>
