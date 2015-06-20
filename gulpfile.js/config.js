@@ -1,4 +1,4 @@
-var dest = './build';
+var dest = './dist';
 var src = './src';
 var port = 3000;
 
@@ -11,25 +11,23 @@ module.exports = {
     }
   },
   sass: {
-    src: src + '/sass/*.{sass,scss}',
-    dest: dest,
+    src: src + '/css/*.{sass,scss,css}',
+    dest: dest + '/css',
     settings: {
-      // Required if you want to use SASS syntax
-      // See https://github.com/dlmanning/gulp-sass/issues/81
       sourceComments: 'map',
-      imagePath: '/images' // Used by the image-url helper
+      imagePath: '/img' // Used by the image-url helper
     }
   },
   lint: {
-    src: [src + '/bundles/**/*.js', src + '/misc/**/*.js']
+    src: [src + '/bundles/**/*.js', src + '/js/**/*.js']
   },
   images: {
-    src: src + '/images/**',
-    dest: dest + '/images'
+    src: src + '/img/**',
+    dest: dest + '/img'
   },
   markup: {
-    src: [src + '/htdocs/**/*.html', '!**/templates/**'],
-    watch: src + '/htdocs/**/*.html',
+    src: [src + '/html/**/*.html', '!**/templates/**'],
+    watch: src + '/html/**/*.html',
     dest: dest,
     swig: {
       defaults: {cache: false}
@@ -38,6 +36,10 @@ module.exports = {
   misc: {
     src: src + '/misc/**',
     dest: dest
+  },
+  js: {
+    src: src + '/js/**',
+    dest: dest + '/js'
   },
   ngrok: {
     port: port
@@ -50,16 +52,14 @@ module.exports = {
     // A separate bundle will be generated for each
     // bundle config in the list below
     bundleConfigs: [{
-      entries: src + '/bundles/main.js',
-      dest: dest,
-      outputName: 'main.js',
-      // list of modules to make require-able externally
-      require: ['jquery', 'underscore']
+      entries: src + '/bundles/bundle.js',
+      dest: dest + '/bundles',
+      outputName: 'bundle.js'
     }]
   },
   production: {
-    cssSrc: dest + '/*.css',
-    jsSrc: dest + '/*.js',
+    cssSrc: dest + '/**/*.css',
+    jsSrc: dest + '/**/*.js',
     dest: dest
   },
   clean: {

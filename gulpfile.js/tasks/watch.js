@@ -15,6 +15,7 @@ function standardTasks() {
   watch(config.images.src, function() { gulp.start('images'); });
   watch(config.markup.watch, function() { gulp.start('markup'); });
   watch(config.misc.src, function() { gulp.start('misc'); });
+  watch(config.js.src, function() { gulp.start('js'); });
   // Watchify will watch and recompile our JS, so no need to gulp.watch it
 }
 
