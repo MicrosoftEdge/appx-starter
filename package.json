@@ -7,7 +7,7 @@
     "url": ""
   },
   "browser": {
-    "plugin": "./src/javascript/vendor/plugin.js"
+    "plugin": "./src/bundles/vendor/plugin.js"
   },
   "browserify": {
     "transform": [
