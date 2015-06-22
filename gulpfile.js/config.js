@@ -57,6 +57,9 @@ module.exports = {
       outputName: 'bundle.js'
     }]
   },
+  nodeCopy: {
+    dest: dest
+  },
   production: {
     cssSrc: dest + '/**/*.css',
     jsSrc: dest + '/**/*.js',

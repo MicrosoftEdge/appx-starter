@@ -16,6 +16,7 @@ function standardTasks() {
   watch(config.markup.watch, function() { gulp.start('markup'); });
   watch(config.misc.src, function() { gulp.start('misc'); });
   watch(config.js.src, function() { gulp.start('js'); });
+  watch('package.json', function() { gulp.start('node-copy'); });
   // Watchify will watch and recompile our JS, so no need to gulp.watch it
 }
 
