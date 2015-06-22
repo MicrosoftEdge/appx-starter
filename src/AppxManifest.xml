@@ -15,7 +15,7 @@
   <Properties>
     <DisplayName>DemoApp</DisplayName>
     <PublisherDisplayName>Demo User</PublisherDisplayName>
-    <Logo>images\storelogo.png</Logo>
+    <Logo>img\storelogo.png</Logo>
   </Properties>
 
   <Dependencies>
@@ -35,10 +35,10 @@
         DisplayName="DemoApp"
         Description="DemoApp"
         BackgroundColor="#FFFFFF"
-        Square150x150Logo="images\Logo.png"
-        Square44x44Logo="images\SmallLogo.png">
+        Square150x150Logo="img\Logo.png"
+        Square44x44Logo="img\SmallLogo.png">
         
-        <uap:SplashScreen Image="images\splashscreen.png" />
+        <uap:SplashScreen Image="img\splashscreen.png" />
       </uap:VisualElements>
       <!-- Describe where the app ends and the internet begins -->
       <uap:ApplicationContentUriRules>
