@@ -54,3 +54,6 @@ There is also a `production` task you can run with `gulp production`, which will
 
 ### Configuration
 All paths and plugin settings have been abstracted into a centralized config object in `gulp/config.js`. Adapt the paths and settings to the structure and needs of your project.
+
+### 
+Application icon: [web design by Simple Icons from the Noun Project](https://thenounproject.com/search/?q=code&i=32232)
