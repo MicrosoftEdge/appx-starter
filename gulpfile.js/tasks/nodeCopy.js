@@ -5,7 +5,7 @@ var browserSync = require('browser-sync');
 
 gulp.task('node-copy', function() {
   if (pkg['node-copy']) {
-    return gulp.src(pkg['node-copy'], {base: 'node_modules/'})
+    return gulp.src(pkg['node-copy'], {base: '.'})
       .pipe(gulp.dest(config.dest))
       .pipe(browserSync.reload({stream:true}));
   } else {
