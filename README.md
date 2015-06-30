@@ -57,3 +57,5 @@ All paths and plugin settings have been abstracted into a centralized config obj
 
 ### 
 Application icon: [web design by Simple Icons from the Noun Project](https://thenounproject.com/search/?q=code&i=32232)
+
+Project using: [Gulp Starter](https://github.com/greypants/gulp-starter) as base
