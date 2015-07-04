@@ -34,7 +34,7 @@
       <uap:VisualElements
         DisplayName="DemoApp"
         Description="DemoApp"
-        BackgroundColor="#FFFFFF"
+        BackgroundColor="#474843"
         Square150x150Logo="img\Logo.png"
         Square44x44Logo="img\SmallLogo.png">
         
