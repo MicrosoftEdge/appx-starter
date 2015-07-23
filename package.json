@@ -1,5 +1,5 @@
 {
-  "name": "gulp-appx",
+  "name": "appx-starter",
   "version": "0.0.2",
   "description": "Gulp build system for Windows 10 Apps",
   "repository": {
