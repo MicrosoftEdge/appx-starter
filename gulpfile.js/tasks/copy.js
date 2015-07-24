@@ -18,6 +18,27 @@ var autoprefixer = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 
+var browserSync = require('browser-sync').create('AppX Server');
+var ngrok = require('ngrok');
+
+gulp.task('browserSync', function(done) {
+  if (argv.ext) {
+    ngrok.connect(config.ngrok, function(err, url) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('external URL: ' + url);
+      }
+    });
+  }
+  if (argv.watch) {
+    browserSync.watch('./dist/**').on('change', browserSync.reload);
+    browserSync.init(config.browserSync, done);
+  } else {
+    done();
+  }
+});
+
 gulp.task('copy', function() {
   var srcFiles = [
     path.join(config.src, '**/**'),
@@ -46,5 +67,6 @@ gulp.task('copy', function() {
     .pipe(changed(config.dest))
     .pipe(gulpif('*.scss', doScss()))
     .pipe(gulpif('*.js', doLint()))
-    .pipe(gulp.dest(config.dest));
+    .pipe(gulp.dest(config.dest))
+    .pipe(browserSync.reload({stream: true}));
 });

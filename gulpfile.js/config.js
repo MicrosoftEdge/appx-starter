@@ -9,8 +9,8 @@ module.exports = {
     server: {
       baseDir: dest,
       port: port
-    },
-    files: [dest + '/dist/**']
+    }//,
+    //files: [dest + '/dist/**']
   },
   sass: {
     settings: {
