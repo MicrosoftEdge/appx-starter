@@ -1,8 +1,9 @@
 var gulp = require('gulp');
+var gulpsequence = require('gulp-sequence');
 
-gulp.task('core', ['clean', 'sass', 'lint', 'images', 'markup', 'misc', 'js', 'node-copy']);
+gulp.task('core', ['clean', 'copy']);
 
-gulp.task('default', ['core', 'watch']);
+gulp.task('default', gulpsequence('browserSync', 'core'));
 
 gulp.task('appx:dev', ['core', 'watchappx']);
 
