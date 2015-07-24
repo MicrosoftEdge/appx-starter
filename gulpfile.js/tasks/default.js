@@ -3,7 +3,7 @@ var gulpsequence = require('gulp-sequence');
 
 gulp.task('core', ['clean', 'copy']);
 
-//gulp.task('default', gulpsequence('browserSync', 'core'));
+gulp.task('default', gulpsequence('browserSync', 'core --watch'));
 
 gulp.task('appx:dev', ['core', 'watchappx']);
 

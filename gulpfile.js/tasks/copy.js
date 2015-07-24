@@ -18,7 +18,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 
-gulp.task('copy', function(done) {
+gulp.task('copy', function() {
   var srcFiles = [
     path.join(config.src, '**/**'),
     '!' + path.join(config.src, 'bundles/**'),
@@ -41,7 +41,8 @@ gulp.task('copy', function(done) {
     : lazypipe().pipe(gutil.noop);
 
   gulp.src(srcFiles)
-    .pipe(gulpif(argv.watch, doWatch()))
+    //.pipe(gulpif(argv.watch, doWatch()))
+    .pipe(doWatch())
     .pipe(changed(config.dest))
     .pipe(gulpif('*.scss', doScss()))
     .pipe(gulpif('*.js', doLint()))
