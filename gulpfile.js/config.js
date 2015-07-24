@@ -18,6 +18,9 @@ module.exports = {
       imagePath: '/img' // Used by the image-url helper
     }
   },
+  appx: {
+    src: src + '/AppxManifest.xml'
+  },
   ngrok: {
     port: port
   },
