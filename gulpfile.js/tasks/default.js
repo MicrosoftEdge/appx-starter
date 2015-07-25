@@ -5,4 +5,6 @@ gulp.task('core', gulpsequence('clean', 'copy', 'webpack'));
 
 gulp.task('default', gulpsequence('browserSync', 'core', 'webpack'));
 
+gulp.task('production', gulpsequence('core', 'minify'));
+
 gulp.task('appx:dev', ['default', 'appx']);
