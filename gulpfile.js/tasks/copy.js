@@ -21,7 +21,10 @@ var stylish = require('jshint-stylish');
 var browserSync = require('browser-sync').create('AppX Server');
 var ngrok = require('ngrok');
 
+var watching = false;
+
 gulp.task('browserSync', function(done) {
+  watching = true;
   if (argv.ext) {
     ngrok.connect(config.ngrok, function(err, url) {
       if (err) {
@@ -31,12 +34,8 @@ gulp.task('browserSync', function(done) {
       }
     });
   }
-  if (argv.watch) {
-    browserSync.watch('./dist/**').on('change', browserSync.reload);
-    browserSync.init(config.browserSync, done);
-  } else {
-    done();
-  }
+  browserSync.watch('./dist/**').on('change', browserSync.reload);
+  browserSync.init(config.browserSync, done);
 });
 
 gulp.task('copy', function() {
@@ -57,7 +56,7 @@ gulp.task('copy', function() {
     .pipe(sourcemaps.write);
 
   // Seems to be necessary
-  var doWatch = argv.watch
+  var doWatch = watching
     ? lazypipe().pipe(watch, srcFiles)
     : lazypipe().pipe(gutil.noop);
 
