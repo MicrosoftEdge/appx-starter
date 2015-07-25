@@ -37,7 +37,12 @@ gulp.task('copy', function() {
     ? lazypipe().pipe(watch, srcFiles)
     : lazypipe().pipe(gutil.noop);
 
-  gulp.src(srcFiles)
+
+  if (config.watch) {
+    gutil.log(gutil.colors.cyan('copy'), 'task watching files...');
+  }
+
+  return gulp.src(srcFiles)
     //.pipe(gulpif(argv.watch, doWatch()))
     .pipe(doWatch())
     .pipe(changed(config.dest))
