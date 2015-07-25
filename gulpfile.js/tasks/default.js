@@ -3,7 +3,7 @@ var gulpsequence = require('gulp-sequence');
 
 gulp.task('core', gulpsequence('clean', 'copy', 'webpack'));
 
-gulp.task('default', gulpsequence('browserSync', 'core', 'webpack'));
+gulp.task('default', gulpsequence('clean', 'browserSync', 'copy', 'webpack'));
 
 gulp.task('production', gulpsequence('core', 'minify'));
 
