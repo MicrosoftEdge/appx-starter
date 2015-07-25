@@ -6,7 +6,7 @@ var uglify = require('gulp-uglify');
 var size = require('gulp-filesize');
 
 gulp.task('minify', function() {
-  gulp.src(config.dest + '**/**')
+  return gulp.src(config.dest + '/**/**')
     .pipe(gulpif('*.css', minifyCSS()))
     .pipe(gulpif('*.js', uglify()))
     .pipe(gulp.dest(config.dest))
