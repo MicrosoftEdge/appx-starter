@@ -7,7 +7,7 @@ var parser = new xml2js.Parser();
 var builder = new xml2js.Builder();
 var argv = require('yargs').argv;
 
-function manifest() {
+function manifest(done) {
   var url = 'http://localhost:3000';
   if (argv.ngrok) {
     url = 'https://' + argv.ngrok + '.ngrok.com';
@@ -33,7 +33,7 @@ function manifest() {
     var xml = builder.buildObject(result);
     var xmlArray = xml.split('\n');
     xmlArray.push(versionBump);
-    fs.writeFileSync(dest, xmlArray.join('\n'));
+    fs.writeFile(dest, xmlArray.join('\n'), done);
   });
 }
 
