@@ -29,7 +29,3 @@ gulp.task('appxregister', function(done) {
     }
   });
 });
-
-gulp.task('appx', ['manifest'], function() {
-  gulp.start('appxregister');
-});
