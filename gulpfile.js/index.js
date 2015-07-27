@@ -10,8 +10,17 @@
   gulp/tasks/default.js specifies the default set of tasks to run
   when you run `gulp`.
 */
-
+var gulp = require('gulp');
+var gulpsequence = require('gulp-sequence');
 var requireDir = require('require-dir');
 
 // Require all tasks in gulp/tasks, including subfolders
 requireDir('./tasks', { recurse: true });
+
+gulp.task('core', gulpsequence('clean', 'copy', 'webpack'));
+
+gulp.task('default', gulpsequence('core', 'browserSync', 'webpack', 'copy'));
+
+gulp.task('production', gulpsequence('core', 'minify'));
+
+gulp.task('appx:dev', ['default', 'appx']);

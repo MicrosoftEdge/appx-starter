@@ -25,6 +25,7 @@
     "gulp-changed": "^0.4.1",
     "gulp-filesize": "0.0.6",
     "gulp-gh-pages": "^0.5.1",
+    "gulp-if": "^1.2.5",
     "gulp-imagemin": "^0.6.2",
     "gulp-jshint": "^1.9.0",
     "gulp-minify-css": "^0.3.11",
@@ -45,6 +46,7 @@
     "require-dir": "^0.1.0",
     "vinyl-source-stream": "~0.1.1",
     "watchify": "^2.2.1",
+    "webpack": "^1.10.5",
     "xml2js": "^0.4.9",
     "yargs": "^3.10.0"
   },

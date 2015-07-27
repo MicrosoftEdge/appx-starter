@@ -1,28 +1,25 @@
+'use strict';
 var config = require('../config');
 
 var gulp = require('gulp');
 var gulpif = require('gulp-if');
 var lazypipe = require('lazypipe');
 var path = require('path');
-var fs = require('fs');
-var argv = require('yargs').argv;
 var gutil = require('gulp-util');
-
 var changed = require('gulp-changed');
 var watch = require('gulp-watch');
-
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
-
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 
-gulp.task('copy', function(done) {
+gulp.task('copy', function() {
   var srcFiles = [
     path.join(config.src, '**/**'),
     '!' + path.join(config.src, 'bundles/**'),
-    '!' + path.join(config.src, 'AppxManifest.xml')
+    '!' + path.join(config.src, 'AppxManifest.xml'),
+    '!' + path.join(config.src, '**/.*')
   ];
 
   var doLint = lazypipe()
@@ -36,14 +33,20 @@ gulp.task('copy', function(done) {
     .pipe(sourcemaps.write);
 
   // Seems to be necessary
-  var doWatch = argv.watch
+  var doWatch = config.watch
     ? lazypipe().pipe(watch, srcFiles)
     : lazypipe().pipe(gutil.noop);
 
-  gulp.src(srcFiles)
-    .pipe(gulpif(argv.watch, doWatch()))
+
+  if (config.watch) {
+    gutil.log(gutil.colors.cyan('copy'), 'task watching files...');
+  }
+
+  return gulp.src(srcFiles)
+    //.pipe(gulpif(argv.watch, doWatch()))
+    .pipe(doWatch())
     .pipe(changed(config.dest))
     .pipe(gulpif('*.scss', doScss()))
     .pipe(gulpif('*.js', doLint()))
-    .pipe(gulp.dest(config.dest));
+    .pipe(gulp.dest(config.dest))
 });
