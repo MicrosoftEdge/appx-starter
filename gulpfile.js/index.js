@@ -25,4 +25,4 @@ gulp.task('production', gulpsequence('core', 'minify'));
 
 gulp.task('appx', gulpsequence('manifest', 'appxregister'));
 
-gulp.task('appx:dev', gulpsequence('default','appx'));
+gulp.task('appx:dev', gulpsequence('core','browserSync', ['webpack', 'copy', 'appx']));
