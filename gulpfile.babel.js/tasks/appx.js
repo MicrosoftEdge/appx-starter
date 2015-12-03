@@ -16,7 +16,7 @@ gulp.task('appxregister', done => {
     if (os.platform() === 'win32') {
       const cwd = process.cwd();
       exec('powershell -noprofile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell -ArgumentList \'-NoProfile -ExecutionPolicy Bypass -File "' +
-           path.join(cwd, 'gulpfile.js/AppxUtilities/Start.ps1') +
+           path.join(cwd, 'gulpfile.babel.js/AppxUtilities/Start.ps1') +
            ' ' + cwd + ' ' + guid + '"\' -Verb Runas}"; ',
       function(err, stdout, stderr) {
         console.log('stdout: ' + stdout);

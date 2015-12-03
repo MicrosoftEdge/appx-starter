@@ -1,11 +1,13 @@
 var gulp = require('gulp');
 var fs = require('fs');
 var util = require('util');
-var config = require('../config').appx;
+// var config = require('../config').appx;
 var xml2js = require('xml2js');
 var parser = new xml2js.Parser();
 var builder = new xml2js.Builder();
 var argv = require('yargs').argv;
+
+import config from '../config';
 
 function manifest(done) {
   var url = 'http://localhost:3000';
@@ -14,8 +16,8 @@ function manifest(done) {
   } else if (argv.url) {
     url = argv.url;
   }
-  var dest = argv.packaged ? config.dest : config.src;
-  var buffer = fs.readFileSync(config.src, 'utf-8');
+  var dest = argv.packaged ? config.appx.dest : config.appx.src;
+  var buffer = fs.readFileSync(config.appx.src, 'utf-8');
   var manifest = buffer.split('\n');
   var updated = [];
   var versionBump = '';
