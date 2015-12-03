@@ -1,11 +1,11 @@
-'use strict';
-var config = require('../config');
-var gulp = require('gulp');
-var browserSync = require('browser-sync').create('AppX Server');
-var ngrok = require('ngrok');
-var argv = require('yargs').argv;
+import {create as createBSync} from 'browser-sync';
+import config from '../config';
+import * as gulp from 'gulp';
+const browserSync = createBSync('AppX Server');
+import {argv} from 'yargs';
+import ngrok from 'ngrok';
 
-gulp.task('browserSync', function(done) {
+gulp.task('browserSync', done => {
   config.watch = true;
   if (argv.ext) {
     ngrok.connect(config.ngrok, function(err, url) {
