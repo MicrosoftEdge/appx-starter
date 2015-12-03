@@ -1,5 +1,5 @@
 import config from '../config';
-import * as gulp from 'gulp';
+import gulp from 'gulp';
 import gulpif from 'gulp-if';
 import minifyCSS from 'gulp-minify-css';
 import uglify from 'gulp-uglify';

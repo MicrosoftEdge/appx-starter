@@ -1,4 +1,4 @@
-import * as gulp from 'gulp';
+import gulp from 'gulp';
 import {exec} from 'child_process';
 import * as os from 'os';
 import xml2js from 'xml2js';

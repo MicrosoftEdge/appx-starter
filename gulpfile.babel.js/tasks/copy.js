@@ -1,5 +1,5 @@
 import config from '../config';
-import * as gulp from 'gulp';
+import gulp from 'gulp';
 import gulpif from 'gulp-if';
 import lazypipe from 'lazypipe';
 import * as path from 'path';

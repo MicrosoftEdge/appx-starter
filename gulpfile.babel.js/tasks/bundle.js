@@ -1,5 +1,5 @@
 import config from '../config';
-import * as gulp from 'gulp';
+import gulp from 'gulp';
 import webpack from 'webpack';
 import gutil from 'gulp-util';
 import * as path from 'path';

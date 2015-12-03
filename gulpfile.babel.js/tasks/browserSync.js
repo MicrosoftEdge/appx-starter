@@ -1,6 +1,6 @@
 import {create as createBSync} from 'browser-sync';
 import config from '../config';
-import * as gulp from 'gulp';
+import gulp from 'gulp';
 const browserSync = createBSync('AppX Server');
 import {argv} from 'yargs';
 import ngrok from 'ngrok';
@@ -8,7 +8,7 @@ import ngrok from 'ngrok';
 gulp.task('browserSync', done => {
   config.watch = true;
   if (argv.ext) {
-    ngrok.connect(config.ngrok, function(err, url) {
+    ngrok.connect(config.ngrok, (err, url) => {
       if (err) {
         console.log(err);
       } else {
