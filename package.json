@@ -1,6 +1,6 @@
 {
   "name": "appx-starter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Gulp build system for Windows 10 Apps",
   "repository": {
     "type": "git",
@@ -34,11 +34,11 @@
     "gulp-useref": "^2.0.1",
     "gulp-util": "^3.0.6",
     "gulp-watch": "^4.2.4",
+    "hwa": "0.0.5",
     "lazypipe": "^1.0.1",
     "pretty-hrtime": "~0.2.1",
     "require-dir": "^0.1.0",
     "webpack": "^1.10.5",
-    "xml2js": "^0.4.9",
     "yargs": "^3.10.0"
   },
   "dependencies": {}
