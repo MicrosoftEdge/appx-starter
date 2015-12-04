@@ -21,7 +21,7 @@ gulp.task('copy', done => {
     '!' + path.join(config.src, '**/.*')
   ];
 
-  const doLint = lazypipe()
+  const doJS = lazypipe()
     .pipe(eslint)
     .pipe(eslint.format)
     .pipe(babel);
@@ -47,7 +47,7 @@ gulp.task('copy', done => {
     .pipe(doWatch())
     .pipe(changed(config.dest))
     .pipe(gulpif('*.scss', doScss()))
-    .pipe(gulpif('*.js', doLint()))
+    .pipe(gulpif('*.js', doJS()))
     .pipe(gulp.dest(config.dest))
 
   done();
