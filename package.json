@@ -6,7 +6,6 @@
     "type": "git",
     "url": ""
   },
-  "browserify-shim": {},
   "devDependencies": {
     "babel-core": "^6.1.2",
     "babel-eslint": "^4.1.4",
