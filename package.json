@@ -6,6 +6,10 @@
     "type": "git",
     "url": ""
   },
+  "scripts": {
+    "start": "./node_modules/.bin/gulp",
+    "appx": "./node_modules/.bin/gulp appx:dev"
+  },
   "devDependencies": {
     "babel-core": "^6.1.2",
     "babel-eslint": "^4.1.4",
