@@ -41,7 +41,7 @@
     "yargs": "^3.10.0"
   },
   "optionalDependencies": {
-    "hwa": "0.0.5"
+    "hwa": "^0.0.6"
   },
   "dependencies": {}
 }
