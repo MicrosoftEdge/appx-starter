@@ -33,12 +33,15 @@
     "gulp-useref": "^2.0.1",
     "gulp-util": "^3.0.6",
     "gulp-watch": "^4.2.4",
-    "hwa": "0.0.5",
     "lazypipe": "^1.0.1",
+    "ngrok": "^0.2.2",
     "pretty-hrtime": "~0.2.1",
     "require-dir": "^0.1.0",
     "webpack": "^1.10.5",
     "yargs": "^3.10.0"
+  },
+  "optionalDependencies": {
+    "hwa": "0.0.5"
   },
   "dependencies": {}
 }
