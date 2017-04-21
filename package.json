@@ -1,6 +1,6 @@
 {
   "name": "appx-starter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Gulp build system for Windows 10 Apps",
   "repository": {
     "type": "git",
